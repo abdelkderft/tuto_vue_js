@@ -44,6 +44,8 @@
         <first-component></first-component>
         <first-component></first-component>
         <article-component v-for="post in posts" :title="post.title" :author="post.author" :id="post.id"></article-component>
+
+        <app-art></app-art>
     </div>
     <script>
         Vue.component('article-component', {
@@ -64,6 +66,16 @@
             },
             template: '<p @click="age++"> this name is {{name}} and click {{age}}</p>',
         })
+
+        var FirstComponent = {
+            data: function() {
+                return {
+                    name: 'sami',
+                    age: 8,
+                }
+            },
+            template: '<p @click="age++"> this name is {{name}} and click {{age}}</p>',
+        }
         var vm = new Vue({
             el: '#app',
             data: {
@@ -101,8 +113,11 @@
                 yourAge: function() {
                     return 'your age in days is :' + this.age * 365;
                 }
-            }
+            },
+            components: {
+                'app-art': FirstComponent
 
+            },
         })
     </script>
 </body>
