@@ -46,6 +46,8 @@
         <article-component v-for="post in posts" :title="post.title" :author="post.author" :id="post.id"></article-component>
 
         <app-art></app-art>
+
+        <h1>{{yourAg}}</h1>
     </div>
     <script>
         Vue.component('article-component', {
@@ -117,6 +119,11 @@
             components: {
                 'app-art': FirstComponent
 
+            },
+            computed: {
+                yourAg: function() {
+                    return 'your age in days is :' + this.age * 10;
+                }
             },
         })
     </script>
