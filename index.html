@@ -18,6 +18,7 @@
         <p>Your first skills is : {{ skills[0]}}</p>
         <p>Your Are : {{ isSubscribed ? 'Subscribed' : 'Not Subscribed'}}</p>
         <p>Resultat Test is : {{ testComplited[0].name}} {{ testComplited[0].resultat}}</p>
+        <p v-text="name"></p>
     </div>
     <script>
         var vm = new Vue({
