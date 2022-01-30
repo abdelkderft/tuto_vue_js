@@ -19,6 +19,15 @@
         <p>Your Are : {{ isSubscribed ? 'Subscribed' : 'Not Subscribed'}}</p>
         <p>Resultat Test is : {{ testComplited[0].name}} {{ testComplited[0].resultat}}</p>
         <p v-text="name"></p>
+
+        <ul>
+            <li v-for="(skill, index) in skills">
+                {{index}} | {{skill}}
+            </li>
+            <li v-for="(test, index) in testComplited">
+                {{index}} | {{test.name}} - {{test.resultat}}
+            </li>
+        </ul>
     </div>
     <script>
         var vm = new Vue({
