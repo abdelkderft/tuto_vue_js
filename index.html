@@ -10,7 +10,43 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <div id="app">
+        <h1>Welcome Vue Js</h1>
+        <H3>Welcome {{name.length > 4 ? name : 'is to short'}}</H3>
+        <p>Your age is : {{ age + ' Years'}}</p>
+        <p>Your age is : {{ yourAge() }}</p>
+        <p>Your first skills is : {{ skills[0]}}</p>
+        <p>Your Are : {{ isSubscribed ? 'Subscribed' : 'Not Subscribed'}}</p>
+        <p>Resultat Test is : {{ testComplited[0].name}} {{ testComplited[0].resultat}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'Abdelkader',
+                age: 20,
+                date: 'today',
+                skills: ['HTML', 'CSS', 'JS'],
+                isSubscribed: false,
+                testComplited: [{
+                    name: 'first test',
+                    resultat: '10',
+                }, {
+                    name: 'second test',
+                    resultat: '20',
+                }, {
+                    name: 'thrid test',
+                    resultat: '30',
+                }, ],
+            },
+            methods: {
+                yourAge: function() {
+                    return 'your age in days is :' + this.age * 365;
+                }
+            }
+
+        })
+    </script>
 </body>
 
 </html>
