@@ -43,8 +43,18 @@
         <first-component></first-component>
         <first-component></first-component>
         <first-component></first-component>
+        <article-component v-for="post in posts" :title="post.title" :author="post.author" :id="post.id"></article-component>
     </div>
     <script>
+        Vue.component('article-component', {
+            data: function() {
+                return {
+
+                }
+            },
+            props: ['title', 'id', 'author'],
+            template: '<h2>{{title}} by {{author}} id {{id}}</h2>',
+        })
         Vue.component('first-component', {
             data: function() {
                 return {
@@ -73,6 +83,19 @@
                     name: 'thrid test',
                     resultat: '30',
                 }, ],
+                posts: [{
+                    title: 'article one',
+                    id: 1,
+                    author: 'david',
+                }, {
+                    title: 'second article',
+                    id: 2,
+                    author: 'david',
+                }, {
+                    title: 'article thrid',
+                    id: 1,
+                    author: 'david',
+                }, ]
             },
             methods: {
                 yourAge: function() {
