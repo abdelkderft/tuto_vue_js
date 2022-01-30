@@ -19,6 +19,8 @@
         <p>Your Are : {{ isSubscribed ? 'Subscribed' : 'Not Subscribed'}}</p>
         <p>Resultat Test is : {{ testComplited[0].name}} {{ testComplited[0].resultat}}</p>
         <p v-text="name"></p>
+        <input type="text" v-modal="date">
+
 
         <ul>
             <li v-for="(skill, index) in skills">
@@ -33,9 +35,25 @@
         <p v-if="age < 15">your are young</p>
         <p>{{ conteur}}</p>
         <button @click="conteur++">click</button>
+        <form action="" method="post">
+            <input type="text" v-model="name">
+        </form>
 
+        <first-component></first-component>
+        <first-component></first-component>
+        <first-component></first-component>
+        <first-component></first-component>
     </div>
     <script>
+        Vue.component('first-component', {
+            data: function() {
+                return {
+                    name: 'sami',
+                    age: 8,
+                }
+            },
+            template: '<p @click="age++"> this name is {{name}} and click {{age}}</p>',
+        })
         var vm = new Vue({
             el: '#app',
             data: {
