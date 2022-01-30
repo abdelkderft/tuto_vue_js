@@ -11,6 +11,7 @@
 
 <body>
     <div id="app">
+        <!-- Simple show  -->
         <h1>Welcome Vue Js</h1>
         <H3>Welcome {{name.length > 4 ? name : 'is to short'}}</H3>
         <p>Your age is : {{ age + ' Years'}}</p>
@@ -18,10 +19,12 @@
         <p>Your first skills is : {{ skills[0]}}</p>
         <p>Your Are : {{ isSubscribed ? 'Subscribed' : 'Not Subscribed'}}</p>
         <p>Resultat Test is : {{ testComplited[0].name}} {{ testComplited[0].resultat}}</p>
+
+        <!-- show via model -->
         <p v-text="name"></p>
         <input type="text" v-modal="date">
 
-
+        <!-- showing with for  -->
         <ul>
             <li v-for="(skill, index) in skills">
                 {{index}} | {{skill}}
@@ -30,25 +33,34 @@
                 {{index}} | {{test.name}} - {{test.resultat}}
             </li>
         </ul>
+
+        <!-- if else  -->
         <p v-if="age > 50">your are old</p>
         <p v-else-if="age > 15 && age < 50">your still young</p>
         <p v-if="age < 15">your are young</p>
+
+        <!-- event click -->
         <p>{{ conteur}}</p>
         <button @click="conteur++">click</button>
         <form action="" method="post">
             <input type="text" v-model="name">
         </form>
 
+        <!-- component -->
         <first-component></first-component>
         <first-component></first-component>
         <first-component></first-component>
         <first-component></first-component>
         <article-component v-for="post in posts" :title="post.title" :author="post.author" :id="post.id"></article-component>
 
+        <!-- component with var  -->
         <app-art></app-art>
 
+        <!-- computed -->
         <h1>{{yourAg}}</h1>
     </div>
+
+
     <script>
         Vue.component('article-component', {
             data: function() {
