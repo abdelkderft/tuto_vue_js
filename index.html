@@ -28,13 +28,16 @@
                 {{index}} | {{test.name}} - {{test.resultat}}
             </li>
         </ul>
+        <p v-if="age > 50">your are old</p>
+        <p v-else-if="age > 15 && age < 50">your still young</p>
+        <p v-if="age < 15">your are young</p>
     </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
                 name: 'Abdelkader',
-                age: 20,
+                age: 8,
                 date: 'today',
                 skills: ['HTML', 'CSS', 'JS'],
                 isSubscribed: false,
