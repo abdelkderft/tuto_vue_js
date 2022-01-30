@@ -31,6 +31,9 @@
         <p v-if="age > 50">your are old</p>
         <p v-else-if="age > 15 && age < 50">your still young</p>
         <p v-if="age < 15">your are young</p>
+        <p>{{ conteur}}</p>
+        <button @click="conteur++">click</button>
+
     </div>
     <script>
         var vm = new Vue({
@@ -38,6 +41,7 @@
             data: {
                 name: 'Abdelkader',
                 age: 8,
+                conteur: 0,
                 date: 'today',
                 skills: ['HTML', 'CSS', 'JS'],
                 isSubscribed: false,
